@@ -150,7 +150,7 @@ Then, the image is enhanced if a sample drawn from a uniform distribution betwee
 The figure below shows examples of the different enhancements mentioned.
 
 ![data augmentation examples](./writeup_images/data_augmentation.png)
-<center><em>Data augmentation via random image enhancements. The type of enhancement is shown on top of each image including the angle. The original image on the top-left is taken from the `track1_4laps` dataset. The FlipLR enhancement reverses the steering angle.</em></center>
+<center><em>Data augmentation via random image enhancements. The type of enhancement is shown on top of each image including the angle. The original image on the top-left is taken from the `track1_4laps` dataset. The Flip enhancement reverses the steering angle.</em></center>
 
 No image enhancement or augmentation is performed on the validation data.
 
