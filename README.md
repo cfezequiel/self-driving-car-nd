@@ -9,8 +9,8 @@ This repository contains solutions to projects in the [Udacity Self-Driving Car 
 Image processing pipeline for identifying road lane lines from an image depicting the driver's side view of the road from inside a car. The pipeline used Hough transform to identify lines after using the Canny algorithm for edge detection. The detected Hough lines were filtered based on their slopes. The images were first color thresholded against white/yellow color and grayscaled. An ROI filter was used to mask out pixels not within the region where lane lines are expected. 
 
 <p align="center">
-  <img src="./P1_lane_finding/output_images/solidWhiteRight.gif">
-  <center><em>Output of lane finding pipeline on sample video clip.</em></center>
+  <img src="./P1_lane_finding/output_images/solidWhiteRight.gif"><br>
+  <em>Output of lane finding pipeline on sample video clip.</em>
 </p>
 
 ### [P2:  Advanced lane finding](./P2_adv_lane_finding)
@@ -22,8 +22,8 @@ Lane pixel extraction involved first finding reference bottom x coordinates for 
 Once the lane boundary curves have been identified, they were used to compute the radius of curvature and vehicle offset from lane center. An image with a lane boundary is drawn and overlayed on the original undistored image.
 
 <p align="center">
-	<img src="./P2_adv_lane_finding/output_project_video.gif">
-	<center><em>Output of advanced lane finding pipeline on sample video clip.</em></center>
+	<img src="./P2_adv_lane_finding/output_project_video.gif"><br>
+	<em>Output of advanced lane finding pipeline on sample video clip.</em>
 </p>
 
 ### [P3: Traffic sign classifier using CNNs](./P3_traffic_sign_classifier)
@@ -31,8 +31,8 @@ Once the lane boundary curves have been identified, they were used to compute th
 CNN classifier based on the [LeNet architecture](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf) for identifying German traffic signs. The model was trained on  32x32 color images of the [German Traffic Sign Dataset](http://benchmark.ini.rub.de/?section=gtsrb&subsection=dataset) with train, validation and test splits of 34799, 4410 and 12630 samples respectively. Model achieved an overal test set accuracy of 94.7% on 43 different traffic sign categories.
 
 <p align="center">
-	<img src="./P3_traffic_sign_classifier/writeup_images/sample38_c1.png">
-	<center><em>Feature map outputted by first convolution layer for a "keep right" traffic sign image.</em></center>
+	<img src="./P3_traffic_sign_classifier/writeup_images/sample38_c1.png"><br>
+	<em>Feature map outputted by first convolution layer for a "keep right" traffic sign image.</em>
 </p>
 
 ### [P4: Behavioral cloning for autonomous driving](./P4_behavioral_cloning)
@@ -41,18 +41,19 @@ Behavioral cloning (regression) model based on the [NVIDIA paper (Bojarski et al
 
 <p align="center">
 	<img src="./P4_behavioral_cloning/writeup_images/final_model_track1_screencast.gif">
-	<center><em>
-		Screencast of autonomous driving on track 1 simulation. <a href="https://www.youtube.com/watch?v=N1Pnjn8Hze4">(YouTube video)</a>
-	</em></center>
+	<center>
+    <em>Screencast of autonomous driving on track 1 simulation. <a href="https://www.youtube.com/watch?v=N1Pnjn8Hze4">(YouTube video)</a></em>
+  </center>
 </p>
 
 ### [P5: Sensor fusion with extended kalman filter](./P5_extended_kalman_filter)
 
-Extended kalman filter for tracking the position of a moving vehicle in simulation using LIDAR and radar data. Implemented in C++.
+Extended kalman filter for tracking the position of a moving vehicle in simulation using LIDAR and radar data. 
+Implemented in C++.
 
 <p align="center">
-	<img src="./P5_extended_kalman_filter/ekf_dataset1.gif">
-	<center><em>Screencast EKF simulation on dataset1.</em></center>
+	<img src="./P5_extended_kalman_filter/ekf_dataset1.gif"><br>
+	<em>Screencast EKF simulation on dataset1.</em>
 </p>
 
 
