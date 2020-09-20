@@ -40,10 +40,8 @@ CNN classifier based on the [LeNet architecture](http://yann.lecun.com/exdb/publ
 Behavioral cloning (regression) model based on the [NVIDIA paper (Bojarski et al. 2016)](https://arxiv.org/abs/1604.07316). Model was trained on recordings of manually-driven car around simulated tracks using the [Udacity driving simulator](https://github.com/udacity/self-driving-car-sim). Data preprocessing and augmentation, such as brightness changes, random shadow overlay and horizontal flip, was performed to expand the quantity and variety of images for training. 
 
 <p align="center">
-	<img src="./P4_behavioral_cloning/writeup_images/final_model_track1_screencast.gif">
-	<center>
-    <em>Screencast of autonomous driving on track 1 simulation. <a href="https://www.youtube.com/watch?v=N1Pnjn8Hze4">(YouTube video)</a></em>
-  </center>
+	<img src="./P4_behavioral_cloning/writeup_images/final_model_track1_screencast.gif"><br>
+    	<em>Screencast of autonomous driving on track 1 simulation. <a href="https://www.youtube.com/watch?v=N1Pnjn8Hze4">(YouTube video)</a></em>
 </p>
 
 ### [P5: Sensor fusion with extended kalman filter](./P5_extended_kalman_filter)
