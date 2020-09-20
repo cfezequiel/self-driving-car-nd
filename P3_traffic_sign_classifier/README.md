@@ -1,6 +1,3 @@
----
-Author: Carlos Ezequiel
----
 # Project 3: Traffic Sign Recognition
 
 ## Objectives
@@ -255,3 +252,5 @@ The final model based on the LeNet architecture was able to achieve a validation
 
 Future work may involve tuning the model's hyperparameters further, and also tweaking other possible hyperparameters, such as the model's initializer (e.g. use Glorot uniform initializer). The model architecture could also be changed to have more convolutional layers and less (or no) pooling layers. More recent architectures, such as ResNet, could also be used. Another improvement could be through data augmentation: creation of synthetic images by transforming the existing ones. This may address the error encountered in the web images if more examples of the "Go straight or keep left" sign similar to the corresponding web image are included in the training set.
 
+## References
+Udacity project: https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project

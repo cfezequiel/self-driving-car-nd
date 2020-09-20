@@ -1,7 +1,5 @@
 # P1: Finding Lane Lines on the Road
 
-Source repo: https://github.com/udacity/CarND-LaneLines-P1
-
 ## Objective
 
 The goals of this project are the following:
@@ -132,4 +130,8 @@ The following are ideas that could help improve the pipeline for detecting lanes
 
 - Convert the image to HSV and use the H channel for lane extraction
 - Fit a line (e.g. using `np.polyfit`) for the left and right lane lines based on the respective line segments/points inferred using Hough transform.
-- Use blackbox parameter tuning to choose better parameters for Canny, Hough and other image operations, where the objective is for the pipeline generate lines similar to reference images/videos  in the`examples` directory.jj
+- Use blackbox parameter tuning to choose better parameters for Canny, Hough and other image operations, where the objective is for the pipeline generate lines similar to reference images/videos  in the`examples` directory.
+
+## References
+
+Udacity project: https://github.com/udacity/CarND-LaneLines-P1

@@ -1,7 +1,3 @@
----
-Author: Carlos Ezequiel
----
-
 # Project 2: Advanced Lane Finding
 
 ## Objective
@@ -183,9 +179,13 @@ To address the above limitations, future work on the pipeline could involve the 
 Currently, pipeline would likely not work in cases where image dimensions are different from the test images and videos. Also, the pipeline may do poorly in images that show glare from the windshield or have other artifacts that may be depicted as lines after performing gradient thresholding (e.g. asphalt divide).
 
 ## References
+Udacity project: https://github.com/udacity/CarND-Advanced-Lane-Lines
+
 The following are additional references I had consulted in building the lane finding pipeline.
 
 - https://medium.com/@tjosh.owoyemi/finding-lane-lines-with-colour-thresholds-beb542e0d839
+
+
 
 ## Appendix
 

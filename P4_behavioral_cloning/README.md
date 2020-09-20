@@ -218,6 +218,8 @@ Ideas for future work include:
 
 ## References
 
+Udacity project: https://github.com/udacity/CarND-Behavioral-Cloning-P3
+
 I referenced the following related work in developing the model for this project.
 
 - https://images.nvidia.com/content/tegra/automotive/images/2016/solutions/pdf/end-to-end-dl-using-px.pdf

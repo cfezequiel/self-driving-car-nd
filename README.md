@@ -41,7 +41,9 @@ Behavioral cloning (regression) model based on the [NVIDIA paper (Bojarski et al
 
 <p align="center">
 	<img src="./P4_behavioral_cloning/writeup_images/final_model_track1_screencast.gif">
-	<center><em>Screencast of autonomous driving on track 1 simulation.</em></center>
+	<center><em>
+		Screencast of autonomous driving on track 1 simulation. <a href="https://www.youtube.com/watch?v=N1Pnjn8Hze4">(YouTube video)</a>
+	</em></center>
 </p>
 
 ### [P5: Sensor fusion with extended kalman filter](./P5_extended_kalman_filter)
@@ -52,6 +54,8 @@ Extended kalman filter for tracking the position of a moving vehicle in simulati
 	<img src="./P5_extended_kalman_filter/ekf_dataset1.gif">
 	<center><em>Screencast EKF simulation on dataset1.</em></center>
 </p>
+
+
 
 
 ## License
