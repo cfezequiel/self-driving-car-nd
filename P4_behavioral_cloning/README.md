@@ -111,6 +111,7 @@ Training data was chosen to keep the vehicle driving on the road, particularly i
 
 
 <center><em> Datasets used for training the final model </em></center>
+
 | Dataset name    | Description                          | Num. samples |
 | --------------- | -------------------------------------|--------------|
 | track1_4laps    | Four laps around track1                      | 4783 |
