@@ -29,15 +29,16 @@ I obtained a basic summary of the dataset using Numpy.
 
 I then analyzed the label distribution of the training, validation and test sets.
 
+*Distribution of labels in the training, validation and test sets. The x-axis contains the class names, with the class IDs in square brackets.*<br>
 ![dataset label distribution](./writeup_images/dataset_label_distribution.png)
-<center><em> Distribution of labels in the training, validation and test sets. The x-axis contains the class names, with the class IDs in square brackets. </em></center>
+
 
 From the above figure, it appears that there is class imbalance in the training, validation and test sets, but the distribution appears to be consistent across datasets (e.g. majority class of training set is similar to the validation and test sets). The majority class of the training set, "Speed limit (50km/h)," has 2010 examples, while the minority class, "Speed limit (20km/h)," has about 180, or about 11x difference. 
 
 I also examined an example image from the training set for each of the classes, as shown in the figure below.
 
+*Example image per class with the class name and ID on top (ID in brackets).  For each class, the first image in order of occurence in the training set was chosen.*<br>
 ![image per class](./writeup_images/image_per_class.png)
-<center><em> Example image per class with the class name and ID on top (ID in brackets).  For each class, the first image in order of occurence in the training set was chosen. </em></center>
 
 In the above figure, some of the images are quite dark and their features are not very noticeable to the human eye. However, this is just showing one example and other images for each class could have better brightness/contrast.
 
@@ -53,9 +54,9 @@ As a first step, the images would be converted from RGB colorspace to grayscale.
 
 The figure below shows the result of grayscale conversion on an arbitrary image in the training set.
 
+*Grayscale conversion*<br>
 ![gray image](./writeup_images/gray_image.png)
 
-<center><em>Grayscale conversion</em></center>
 
 ##### Normalization
 
@@ -67,8 +68,9 @@ I initially used center-pixel normalization without grayscale conversion. Howeve
 
 Below is an example of an image before and after normalization.
 
+*(Left) Example image from training set with low brightness and contrast. (Right) Image after applying normalization. Since the normalized image would have pixel values that are not in the 0-1 range, it needed to be rescaled (from 0-255) in order for `matplotlib` to display it properly.*<br>
 ![preprocessed image](./writeup_images/normalized_image.png)
-<center><em>(Left) Example image from training set with low brightness and contrast. (Right) Image after applying normalization. Since the normalized image would have pixel values that are not in the 0-1 range, it needed to be rescaled (from 0-255) in order for `matplotlib` to display it properly.</em></center>
+
 
 As shown in the figure above, the normalized image appears to have better brightness and contrast than its raw equivalent. The sign features could be more clearly seen.
 
@@ -79,7 +81,7 @@ I also shuffled the training set using `sklearn.utils.shuffle`.
 #### Model architecture
 The model was implemented using TensorFlow 1.3. I based the model architecture on [LeNet](http://yann.lecun.com/exdb/publis/pdf/lecun-01a.pdf), but also added a dropout layer after flatten layer in order to potentially reduce overfitting. The different layers are described in the table below.
 
-<center><em> Modified LeNet architecture </em></center>
+*Modified LeNet architecture*
 
 | Layer         		| Description	        					|
 |:-----------------:|:---------------------------------------------:|
@@ -131,7 +133,8 @@ I had tweaked the following hyperparameters in order to improve model performanc
 The table below shows a summary of key model training iterations for improving the performance.
 
 
-<center><em>Model training iterations summary</em></center>
+*Model training iterations summary*
+
 | No.  | Params                                                       | train_acc | valid_acc | acc_diff  | test_acc  | Notes                                                        |
 | ---- | ------------------------------------------------------------ | --------- | --------- | --------- | --------- | ------------------------------------------------------------ |
 | 1    | learning_rate=0.001, batch_size=128, num_epochs=10, dropout_prob=1 | 0.956     | 0.745     | 0.211     | NA        | Overfit                                                      |
@@ -157,15 +160,16 @@ My final model performance results are shown in row 5 in the above table.
 
 Here are five German traffic signs that I found on the web, which I had cropped and resized to 32x32 pixels.
 
+*German traffic sign images and their labels from the web*<br>
 ![new images](./writeup_images/new_images.png)
 
-<center><em>German traffic sign images and their labels from the web</em></center>
+
 
 I initially thought that the second one from the left would be more difficult to classify due to the dark notch on the top. 
 
 I ran the final model and obtained the following results.
 
-<center><em>Prediction results for new images with softmax probabilities.</em></center>
+*Prediction results for new images with softmax probabilities.*
 
 | Image			        |     Prediction	        					| Probability	|
 |:---------------------:|:---------------------------------------------:|-----------------------|
@@ -179,19 +183,18 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 From the above table, the model was not able to correctly classify the "Go straight or left" image, and predicted "Keep right" instead with relatively high probability (0.930). In order to figure out why the model misclassified this particular image, I examined sample images for "Go straight or left" and "Keep right" images, which are shown below.
 
-
+*"Go straight or left" random samples from training set*<br>
 ![go straight or left](./writeup_images/go_straight_or_left_samples.png)
-<center><em>"Go straight or left" random samples from training set</em></center>
 
+*"Keep right" random samples from training set*<br>
 ![keep write](./writeup_images/keep_right_samples.png)
-<center><em>"Keep right" random samples from training set</em></center>
 
 It appears that the "Go straight or left" sign images have thinner arrows than the new example, which may have caused the model to confuse it with "Keep right".
 
 To examine the model predictions further, I extracted the top 5 highest softmax prediction probabilities for each image using `tf.nn.top_k` function. The results are summarized in the table below:
 
 
-<center><em> Top 5 softmax probabilities for each of the new images, from highest (1st) to lowest (5th). The leftmost column shows the ground truth labels. The probability values are in parentheses.</em></center>
+*Top 5 softmax probabilities for each of the new images, from highest (1st) to lowest (5th). The leftmost column shows the ground truth labels. The probability values are in parentheses.*<br>
 ![top 5 probabilities](./writeup_images/top5.png)
 
 From the table above, it appears that the image where the model got the prediction wrong does not even have the correct label as the top 5 prediction (it appears as the 8th highest probability).
@@ -203,13 +206,13 @@ In order to better understand what the model is learning, I examined the feature
 
 Below are the first convolutional layer activations maps for the the misclassified image, sample-37, and sample-38 respectively. Note that these output are before the ReLU activation has been applied.
 
-<center><em>Misclassified image feature maps (conv 1)</em></center>
+*Misclassified image feature maps (conv 1)*<br>
 ![misclassified image conv1](./writeup_images/error_image_c1.png)
 
-<center><em>Sample-37 feature maps (conv 1)</em></center>
+*Sample-37 feature maps (conv 1)*<br>
 ![sample-37 conv1](./writeup_images/sample37_c1.png)
 
-<center><em>Sample-38 feature maps (conv 1)</em></center>
+*Sample-38 feature maps (conv 1)*<br>
 ![sample-37 conv1](./writeup_images/sample38_c1.png)
 
 As shown above, the model is detecting the edges of the traffic sign image, particularly the circular shape of the sign and the arrows, in the first convolutional layer. The feature maps of the misclassified image and sample-37 are more similar than the former to sampl-38, which is expected.  
@@ -218,13 +221,13 @@ As shown above, the model is detecting the edges of the traffic sign image, part
 
 Below are feature maps for the same images from the second convolutional layer.
 
-<center><em>Misclassified image feature maps (conv 2)</em></center>
+*Misclassified image feature maps (conv 2)*<br>
 ![misclassified image conv1](./writeup_images/error_image_c2.png)
 
-<center><em>Sample-37 feature maps (conv 2)</em></center>
+*Sample-37 feature maps (conv 2)*<br>
 ![sample-37 conv1](./writeup_images/sample37_c2.png)
 
-<center><em>Sample-38 feature maps (conv 2)</em></center>
+*Sample-38 feature maps (conv 2)*<br>
 ![sample-37 conv1](./writeup_images/sample38_c2.png)
 
 As shown in the figures above, the feature maps of the second convolutional layer are less detailed than the first. It is harder to visually identify what type of traffic sign image is being passed from the feature maps. Also, the feature maps of sample-37 and sample-38 appear to be less distinquishable. The feature maps are also smaller, due in part to the max pooling layer reducing the input size by roughly half.
@@ -235,13 +238,13 @@ This convolutional layer is succeeded by a ReLU activation layer and another max
 
 The figures below show features maps generated by second pooling layer of the model.
 
-<center><em>Misclassified image feature maps (pool 2)</em></center>
+*Misclassified image feature maps (pool 2)*<br>
 ![misclassified image conv1](./writeup_images/error_image_pool2.png)
 
-<center><em>Sample-37 feature maps (pool 2)</em></center>
+*Sample-37 feature maps (pool 2)*<br>
 ![sample-37 conv1](./writeup_images/sample37_pool2.png)
 
-<center><em>Sample-38 feature maps (pool 2)</em></center>
+*Sample-38 feature maps (pool 2)*<br>
 ![sample-37 conv1](./writeup_images/sample38_pool2.png)
 
 At this layer, it is even more difficult to compare and contrast the different images based on their feature maps. In succeeding layers, these outputs would be flattened and further compressed using dense layers.
