@@ -54,8 +54,25 @@ Implemented in C++.
 	<em>Screencast EKF simulation on dataset1.</em>
 </p>
 
+### [P6: Particle filter for vehicle localization](./P6_kidnapped_vehicle)
 
+Scenario: Robot vehicle has been kidnapped and transported to a new location! Fortunately it has a map of the area, a noisy GPS estimate of its initial location and some sensor and control data.
 
+The goal is to implement a two-dimensional particle filter in C++ for localizing a vehicle using observed landmarks, a map and some initial localization information (similar to GPS coordinates).
+
+<p align="center">
+	<img src="./P6_kidnapped_vehicle/particle_filter.gif"><br>
+	<em>Vehicle simulation with 2D particle filter for localization.</em>
+</p>
+
+### [P7: Highway driving (path planning)](./P7_highway_driving)
+
+The goal of this project is to implement a path planning algorithm in C++ to safely navigate a car around a virtual highway with other traffic that is driving ~10 MPH of the 50 MPH speed limit. The algorithm would generate the appropriate target lane and velocity parameters for generating a trajectory at every cycle, which occurs when the simulator sends new telemetry data.
+
+<p align="center">
+  <img src="./P7_highway_driving/images/highway_driving_15fps.gif"><br>
+  <em>Ego car navigating through traffic in a stretch of road using the path planner (<a href="https://www.youtube.com/watch?v=u69gBEt4pOc">video</a>).</em>
+</p>
 
 ## License
 [Apache 2.0](./LICENSE)
