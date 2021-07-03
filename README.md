@@ -74,7 +74,18 @@ The goal of this project is to implement a path planning algorithm in C++ to saf
   <em>Ego car navigating through traffic in a stretch of road using the path planner (<a href="https://www.youtube.com/watch?v=u69gBEt4pOc">video</a>).</em>
 </p>
 
+### [P8: PID controller](./P8_pid_controller)
+
+This project involves implementing a PID controller in C++ to enable a virtual car to drive around a simulated track, similar to [P4: Behavioral cloning for autonomous driving](./P4_behavioral_cloning).
+
+<p align="center">
+  <img src="./P8_pid_controller/images/pid_control.gif"><br>
+  <em>PID controller-driven car in simulated track.</em>
+</p>
+
+
 ## License
+
 [Apache 2.0](./LICENSE)
 
 
