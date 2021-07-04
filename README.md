@@ -83,6 +83,11 @@ This project involves implementing a PID controller in C++ to enable a virtual c
   <em>PID controller-driven car in simulated track.</em>
 </p>
 
+### P9: Capstone project - self-driving car simulation
+
+The final project for this course involves implementing a components of autonomous vehilce system using ROS so that it can run on Carla, Udacity's actual self-driving car. Unfortunately, due to the COVID-19 pandemic, actual in-car testing had been suspended since the Udacity office was closed. However, the project was still validated in simulation only.
+
+I had worked with a group for this project, and our code can be found [here](https://github.com/hurtadosanti/SelfDrivingVehicle).
 
 ## License
 
